@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
-alias nvim="vim"
+alias vim="nvim"
 alias ls="exa"
 alias ll="exa -alh"
 alias tree="exa --tree"
