@@ -1,7 +1,7 @@
 ##---------- BSPWM Keybindings ----------##
 
 # make sxhkd reload its configuration files:
-super + Escape
+super + r
 	pkill -USR1 -x sxhkd
 
 
@@ -20,7 +20,8 @@ super + c
   google-chrome-stable
 
 # color picker
-
+super + Shift + p 
+  XColor
 
 # lockscreen 
 
@@ -68,7 +69,7 @@ XF86AudioMute
 ##---------- Bspwm ----------##
 
 # lock screen 
-super + l 
+super + Escape
   betterlockscreen -l
 
 # quit/restart bspwm
