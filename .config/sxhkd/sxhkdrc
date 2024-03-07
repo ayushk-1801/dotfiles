@@ -23,9 +23,6 @@ super + c
 super + Shift + p 
   XColor
 
-# lockscreen 
-
-
 
 ##---------- Rofi Launcher & Menus ----------##
 
@@ -63,7 +60,8 @@ XF86AudioMute
   pulsemixer  --toggle-mute
 
 # screenshot
-
+Print
+  ksnip
 
 
 ##---------- Bspwm ----------##
