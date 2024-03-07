@@ -3,15 +3,18 @@ This directory contains the dotfiles for my system
 [Help](https://youtu.be/y6XCebnB9gs?si=Qt8Y_C_JV0rs-zD6)
 
 ## What I use
-- OS: [Arch Linux]()
-- Window Mananger: [bspwm]()
-- Bar: [Polybar]()
-- IDE: [Neovim]()
-- Terminal: [Kitty]()
-- Shell: [zsh]()
-- Terminal Multiplexer: [Tmux]()
-- Launcher: [Rofi]()
-- Notification: [Dunst]()
+- OS: [Arch Linux](https://archlinux.org/)
+- Window Mananger: [bspwm](https://github.com/baskerville/bspwm)
+- Bar: [Polybar](https://github.com/polybar/polybar)
+- IDE: [Neovim](https://github.com/neovim/neovim)
+- Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
+- Shell: [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+- Terminal Multiplexer: [Tmux](https://github.com/tmux/tmux/wiki)
+- Launcher: [Rofi](https://github.com/davatorium/rofi)
+- Notification: [Dunst](https://github.com/dunst-project/dunst)
+- Compositor: [Picom](https://github.com/yshui/picom)
+- Display Manager: [ly](https://github.com/fairyglade/ly)
+- Terminal File Manager: [lf](https://github.com/gokcehan/lf)
 
 
 ## Dependencies
