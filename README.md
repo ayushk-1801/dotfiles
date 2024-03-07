@@ -20,7 +20,7 @@ This directory contains the dotfiles for my system
 ## Dependencies
 Ensure you have the following installed on your system
 ```
-pacman -S git stow
+sudo pacman -S git stow
 ```
 
 ## Installation
