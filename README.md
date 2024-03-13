@@ -7,7 +7,7 @@ This directory contains the dotfiles for my system
 - Bar: [Polybar](https://github.com/polybar/polybar)
 - IDE: [Neovim](https://github.com/neovim/neovim)
 - Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
-- Shell: [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+- Shell: [fish](https://github.com/fish-shell/fish-shell)
 - Terminal Multiplexer: [Tmux](https://github.com/tmux/tmux/wiki)
 - Launcher: [Rofi](https://github.com/davatorium/rofi)
 - Notification: [Dunst](https://github.com/dunst-project/dunst)
