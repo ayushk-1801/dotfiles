@@ -16,8 +16,10 @@ super + e
 	thunar
 
 # browser
-super + c 
-  google-chrome-stable
+super + shift + Return
+  firefox -P Ayush
+super + shift + b
+  firefox -P college
 
 # color picker
 super + Shift + p 
