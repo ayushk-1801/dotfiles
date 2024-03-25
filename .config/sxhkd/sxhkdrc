@@ -63,7 +63,7 @@ XF86AudioMute
 
 # screenshot
 Print
-  ksnip
+  ~/.config/scripts/screenshot.sh
 
 
 ##---------- Bspwm ----------##
