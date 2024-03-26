@@ -35,3 +35,8 @@ then use GNU stow to create symlinks
 $ stow .
 $ stow --adopt .
 ```
+
+## To-do 
+- [ ] randomized pokemon script
+- [ ] polybar config
+- [ ] sddm login manager 
