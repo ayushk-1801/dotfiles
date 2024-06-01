@@ -1,3 +1,24 @@
+# Set-up dotfiles
+## Dependencies
+```
+sudo pacman -S stow
+```
+## Clone & Stow
+```
+git clone https://github.com/ayushk-1801/dotfiles.git
+cd dotfiles
+stow .
+```
+## Setup dwm 
+```
+cd .config/dwm
+sudo make clean install
+cd .config/dmenu
+sudo make clean install
+cd .config/dwmbar
+sudo ./install.sh
+```
+
 # Post Installation Instructions
 
 ## DWM 
@@ -65,8 +86,7 @@ Install ntfs-3g for ntfs partitions
 
 ```
 # <file system>         <mount point>   <type>      <options>               <dump>  <pass>
-# /dev/nvme0n1p4
-UUID=xxxxxxxxxxxxxxx	/home/Drive 	ntfs-3g	    defaults,noatime,users	0 0
+/dev/nvme0n1p4      	/mnt/home    	ntfs-3g	    defaults                0       2
 ```
 
 ## Other
