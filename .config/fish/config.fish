@@ -16,6 +16,10 @@ and not set -q TMUX
     exec tmux
 end
 
+function mkcd
+    command mkdir $argv; and cd $argv
+end
+
 starship init fish | source
 fzf --fish | source
 zoxide init --cmd cd fish | source
