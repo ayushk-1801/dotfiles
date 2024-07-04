@@ -11,21 +11,19 @@
 #define PrintScreenDWM 0x0000ff61
 
 /* appearance */
-static const unsigned int borderpx = 2; /* border pixel of windows */
+static const unsigned int borderpx = 1; /* border pixel of windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 static const char *fonts[] = {"JetBrainsMono Nerd Font:size=10"};
 static const char dmenufont[] = "JetBrainsMono Nerd Font:size=10";
-static const char col_gray1[] = "#010101";
-static const char col_gray2[] = "#cccccc";
-static const char col_gray3[] = "#eeeeee";
-static const char col_gray4[] = "#eeeeee";
-static const char col_cyan[] = "#f8f9f9";
+static const char black[] = "#010101";
+static const char white[] = "#eeeeee";
+static const char gray[] = "#cccccc";
 static const char *colors[][3] = {
     /*               fg         bg         border   */
-    [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
-    [SchemeSel] = {col_gray4, col_cyan, col_cyan},
+    [SchemeNorm] = {white, black, black},
+    [SchemeSel] = {black, gray, white},
 };
 
 /* tagging */
@@ -75,8 +73,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-    "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
-    "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
+    "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     black,
+    "-nf",       white, "-sb",    gray, "-sf",     black, NULL};
 static const char *termcmd[] = {"kitty", NULL};
 static const char *mutecmd[] = {"pactl", "set-sink-mute", "0", "toggle", NULL};
 static const char *volupcmd[] = {"pactl", "set-sink-volume", "0", "+5%", NULL};
