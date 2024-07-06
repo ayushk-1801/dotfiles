@@ -5,7 +5,7 @@ if status is-interactive
     alias v="vim"
     alias n="nvim"
     alias ls="exa --icons"
-    alias ll="exa -alh --icons"
+    alias ll="exa -lah --icons --color=always --group-directories-first -F"
     alias tree="exa --tree --icons"
     alias cat="bat"
     alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
