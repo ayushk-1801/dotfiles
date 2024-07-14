@@ -1,5 +1,4 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
     set fish_greeting
 
     alias v="vim"
@@ -8,6 +7,7 @@ if status is-interactive
     alias ll="exa -lah --icons --color=always --group-directories-first -F"
     alias tree="exa --tree --icons"
     alias cat="bat"
+    alias lg="lazygit"
     alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 end
 
