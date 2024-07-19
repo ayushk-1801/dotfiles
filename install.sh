@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/bin/bash
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> UPDATING SYSTEM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
 sudo pacman --noconfirm -Syu
 
