@@ -78,6 +78,8 @@ k = up
 l = right
 w = C-right
 b = C-left
+u = home
+i = end
 ```
 
 ## Mount Partitions
