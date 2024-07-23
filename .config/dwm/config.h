@@ -84,7 +84,7 @@ static const char *voldowncmd[] = {"pactl", "set-sink-volume", "0", "-5%",
 static const char *brupcmd[] = {"brightnessctl", "set", "+10%", NULL};
 static const char *brdowncmd[] = {"brightnessctl", "set", "10%-", NULL};
 static const char *lockcmd[] = {"betterlockscreen", "-l", NULL};
-static const char *screenshotcmd[] = {"scrot", "'/home/ayush/Screenshots/%Y-%m-%d-%s_$wx$h.jpg'", "-e", "'xclip", "-selection", "clipboard", "-t" , "image/png", "-i", "$f'", NULL};
+static const char *screenshotcmd[] = {"scrot", "-e", "xclip -selection clipboard -t image/png -i $f", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
@@ -125,7 +125,7 @@ static const Key keys[] = {
     {0, XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd}},
     {0, XF86XK_MonBrightnessUp, spawn, {.v = brupcmd}},
     {0, XF86XK_MonBrightnessDown, spawn, {.v = brdowncmd}},
-    {0, PrintScreenDWM, spawn, {.v = screenshotcmd}},
+    {MODKEY | ShiftMask, XK_p, spawn, {.v = screenshotcmd}},
 };
 
 /* button definitions */
