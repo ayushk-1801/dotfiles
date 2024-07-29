@@ -1,4 +1,5 @@
 xrandr --dpi 120 &
 nitrogen --restore &
+picom &
 # picom --animations -b &
 dwmbar &
