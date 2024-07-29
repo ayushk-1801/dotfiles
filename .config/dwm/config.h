@@ -21,10 +21,11 @@ static const char black[] = "#010101";
 static const char white[] = "#eeeeee";
 static const char gray[] = "#808080";
 static const char red[] = "#b23232";
+static const char blue[] = "#223a3f";
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {white, black, black},
-    [SchemeSel] = {white, red, white},
+    [SchemeSel] = {white, blue, white},
 };
 
 /* tagging */
@@ -75,7 +76,7 @@ static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     black,
-    "-nf",       white, "-sb",    red, "-sf",     white, NULL};
+    "-nf",       white, "-sb",    blue, "-sf",     white, NULL};
 static const char *termcmd[] = {"kitty", NULL};
 static const char *mutecmd[] = {"pactl", "set-sink-mute", "0", "toggle", NULL};
 static const char *volupcmd[] = {"pactl", "set-sink-volume", "0", "+5%", NULL};
