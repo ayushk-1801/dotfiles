@@ -21,7 +21,7 @@ static const char black[] = "#010101";
 static const char white[] = "#eeeeee";
 static const char gray[] = "#808080";
 static const char red[] = "#b23232";
-static const char blue[] = "#223a3f";
+static const char blue[] = "#1c1b22";
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {white, black, black},

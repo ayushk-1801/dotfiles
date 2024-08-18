@@ -2,7 +2,7 @@ if status is-interactive
     set fish_greeting
 
     alias n="nvim"
-    alias v="NVIM_APPNAME=nvim_simple nvim"
+    alias v="NVIM_APPNAME=nvim_bkp nvim"
     alias ls="exa --icons"
     alias ll="exa -lah --icons --color=always --group-directories-first -F"
     alias tree="exa --tree --icons"
