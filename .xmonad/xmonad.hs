@@ -33,8 +33,6 @@ import qualified Data.Map           as M
 import qualified Data.Maybe         as DM
 
 
-
-
 myTerminal           = "kitty"
 
 myFocusFollowsMouse  :: Bool
@@ -54,10 +52,6 @@ toggleFullscreen = do
     withFocused toggleBorder
     sendMessage ToggleGaps
 
--- command to launch galaxy buds client, I didn't want to mess up the table structure with the long environment variable
-gbudsClientCmd = "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 GalaxyBudsClient_Linux_64bit_Portable.bin"
-
-
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm                , xK_t     ), spawn $ XMonad.terminal conf                              )
     , ((modm                , xK_p     ), spawn ".config/rofi/launchers/type-1/launcher.sh"                )
@@ -69,7 +63,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm                , xK_Tab   ), windows W.focusDown                                       )
     , ((modm                , xK_j     ), windows W.focusDown                                       )
     , ((modm                , xK_k     ), windows W.focusUp                                         )
-    , ((modm .|. shiftMask  , xK_m     ), spawn $ myTerminal ++ " -e cmus"                          )
     , ((modm                , xK_Return), windows W.swapMaster                                      )
     , ((modm .|. shiftMask  , xK_j     ), windows W.swapDown                                        )
     , ((modm .|. shiftMask  , xK_k     ), windows W.swapUp                                          )
@@ -105,18 +98,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
-
-
 -- gestures = M.fromList
   -- [ ( [ L ], \_ -> nextWS )
   -- , ( [ U ], \_ -> nextWS )
   -- , ( [ R ], \_ -> prevWS )
   -- , ( [ D ], \_ -> prevWS )
   -- ]
-
-
-
-
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm, button1), (\w -> focus w >> mouseMoveWindow w
@@ -129,9 +116,6 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     -- , ((0, button1), mouseGesture gestures)
     ]
 
-
-
-
 mySWNConfig :: SWNConfig
 mySWNConfig = def{
     swn_font      = "xft:JetBrainsMono Nerd Font:bold:size=50"
@@ -139,9 +123,6 @@ mySWNConfig = def{
     , swn_bgcolor = "#000000"
     , swn_color   = "#ffffff"
 }
-
-
-
 
 myLayout =  magnifierOff
          $  showWName' mySWNConfig
@@ -158,22 +139,13 @@ myLayout =  magnifierOff
             ratio   = 1/2
             delta   = 3/100
 
-
-
-
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Xfce4-terminal" --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
-
-
-
 myEventHook = swallowEventHook (className =? "Alacritty") (return True)
-
-
-
 
 myStartupHook = do
     spawnOnce "xrandr --dpi 120 &"
@@ -182,16 +154,10 @@ myStartupHook = do
     spawnOnce "xsetroot -cursor_name left_ptr"
     spawn "xset s off -dpms"
 
-
-
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..]
 
 clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>"
     where i = DM.fromJust $ M.lookup ws myWorkspaceIndices
-
-
-
-
 
 main = do
     xmproc <- spawnPipe "LC_CTYPE=en_US.utf8 xmobar -x 0 $HOME/.config/xmobar/xmobar.hs "
