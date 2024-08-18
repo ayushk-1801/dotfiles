@@ -9,6 +9,6 @@ echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> INSTALLING NVIDIA DRIVERS <<<<<<<<<
 sudo pacman --noconfirm -S nvidia nvidia-lts nvidia-settings nvidia-utils
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> INSTALLING IMPORTANT PROGRAMS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
-sudo pacman --noconfirm -S git vim tmux fish neovim kitty neofetch bashtop exa bat fd fzf lxappearance picom nitrogen dunst firefox firefox-developer-edition discord xcolor thunar gvfs rofi
+sudo pacman --noconfirm -S git vim tmux fish neovim kitty neofetch bashtop exa bat fd fzf lxappearance picom nitrogen dunst firefox firefox-developer-edition discord xcolor thunar gvfs rofi ly
 
 paru -S picom-ftlabs-git

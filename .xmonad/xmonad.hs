@@ -60,7 +60,7 @@ gbudsClientCmd = "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 GalaxyBudsClient_Linux
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm                , xK_t     ), spawn $ XMonad.terminal conf                              )
-    , ((modm                , xK_p     ), spawn "LC_CTYPE=en_US.utf8 rofi -show run"                )
+    , ((modm                , xK_p     ), spawn ".config/rofi/launchers/type-1/launcher.sh"                )
     , ((modm                , xK_q     ), kill                                                      )
     , ((modm                , xK_space ), sendMessage NextLayout                                    )
     , ((modm .|. controlMask, xK_t     ), toggleFullscreen                                          )
