@@ -78,7 +78,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask  , xK_Return), withFocused $ windows . W.sink                            )
     , ((modm                , xK_comma ), sendMessage (IncMasterN 1)                                )
     , ((modm                , xK_period), sendMessage (IncMasterN (-1))                             )
-    , ((modm                , xK_b     ), spawn "firefox &"                                         )
+    , ((modm                , xK_b     ), spawn "firefox-developer-edition &"                       )
     , ((modm .|. shiftMask  , xK_q     ), io exitSuccess                                            )
     , ((modm .|. shiftMask  , xK_h     ), spawn "xmonad --recompile; xmonad --restart"              )
     , ((modm .|. shiftMask  , xK_g     ), sendMessage ToggleGaps                                    )
@@ -91,9 +91,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask  , xK_Left  ), shiftToPrev                                               )
     , ((0, xF86XK_MonBrightnessUp      ), spawn "brightnessctl set +10%"                            )
     , ((0, xF86XK_MonBrightnessDown    ), spawn "brightnessctl set 10%-"                            )
-    , ((0, XF86XK_AudioLowerVolume     ), spawn "pactl set-sink-volume 0 -5%"                       )
-    , ((0, XF86XK_AudioMute            ), spawn "pactl set-sink-mute 0 toggle"                      )
-    , ((0, XF86XK_AudioRaiseVolume     ), spawn "pactl set-sink-volume 0 +5%"                       )
+    , ((0, xF86XK_AudioLowerVolume     ), spawn "pactl set-sink-volume 0 -5%"                       )
+    , ((0, xF86XK_AudioMute            ), spawn "pactl set-sink-mute 0 toggle"                      )
+    , ((0, xF86XK_AudioRaiseVolume     ), spawn "pactl set-sink-volume 0 +5%"                       )
     ]
     ++
     [((m .|. modm, k), windows $ f i)
