@@ -9,7 +9,7 @@ git clone https://github.com/ayushk-1801/dotfiles.git
 cd dotfiles
 stow .
 ```
-## Setup dwm 
+## Setup dwm
 ```
 cd .config/dwm
 sudo make clean install
@@ -18,18 +18,23 @@ sudo make clean install
 cd .config/dwmbar
 sudo ./install.sh
 ```
+## Setup Xmonad
+```
+sudo pacman -S xmonad xmonad-contrib xmobar
+xmonad --recompile
+```
 
 # Post Installation Instructions
 
-## DWM 
+## DWM
 Location: '/usr/share/xsessions/dwm.desktop'
 ```
 [Desktop Entry]
-Encoding=UTF-8 
-Name=dwm 
-Comment=Dynamic Window Manager 
-Exec=/usr/local/bin/dwm 
-Icon=dwm 
+Encoding=UTF-8
+Name=dwm
+Comment=Dynamic Window Manager
+Exec=/usr/local/bin/dwm
+Icon=dwm
 Type=XSession
 ```
 
@@ -46,7 +51,7 @@ Section "InputClass"
 EndSection
 ```
 
-## Sleep on Lid Close & Power Button 
+## Sleep on Lid Close & Power Button
 Location: '/etc/systemd/logind.conf'
 ```
 HandleLidSwitch=suspend
