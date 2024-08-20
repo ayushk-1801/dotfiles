@@ -15,5 +15,5 @@ Config { font = "JetBrainsMono Nerd Font, Bold, 16"
         , sepChar = "%"
         , alignSep = "}{"
         -- , template = "%UnsafeStdinReader% }{ <fc=#6699CC> %disku% </fc><fc=#E23D28> %cpu% </fc><fc=#fabd2f> %memory% </fc><fc=#b8bb26> %battery% </fc><fc=#83a598> %date% </fc>"
-        , template = "%UnsafeStdinReader% }{ %disku% | %cpu% | %memory% | %battery% | %date%"
+        , template = "%UnsafeStdinReader% } %date% { %disku% | %cpu% | %memory% | %battery% "
 }

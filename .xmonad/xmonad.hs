@@ -53,7 +53,7 @@ toggleFullscreen = do
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm                , xK_t     ), spawn $ XMonad.terminal conf                              )
-    , ((modm                , xK_p     ), spawn ".config/rofi/launchers/type-1/launcher.sh"                )
+    , ((modm                , xK_p     ), spawn ".config/rofi/launchers/type-1/launcher.sh"         )
     , ((modm                , xK_q     ), kill                                                      )
     , ((modm                , xK_space ), sendMessage NextLayout                                    )
     , ((modm .|. controlMask, xK_t     ), toggleFullscreen                                          )
@@ -121,10 +121,10 @@ mySWNConfig = def{
 }
 
 myLayout =
-         showWName' mySWNConfig
+         -- showWName' mySWNConfig
          -- $  spacingRaw True (Border 0 5 5 5) True (Border 5 5 5 5) True
          -- $  gaps [(U,30),(R,7),(L,7),(D,7)]
-         $ avoidStruts myDefaultLayout
+         avoidStruts myDefaultLayout
          where
             myDefaultLayout = tiled
                           ||| Mirror tiled
