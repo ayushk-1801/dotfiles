@@ -70,7 +70,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask  , xK_Return), withFocused $ windows . W.sink                            )
     , ((modm                , xK_comma ), sendMessage (IncMasterN 1)                                )
     , ((modm                , xK_period), sendMessage (IncMasterN (-1))                             )
-    , ((modm                , xK_b     ), spawn "qutebrowser --qt-flag ignore-gpu-blacklist --qt-flag enable-gpu-rasterization --qt-flag enable-native-gpu-memory-buffers --qt-flag num-raster-threads=4 &" )
+    , ((modm                , xK_b     ), spawn "qutebrowser &" )
     , ((modm .|. shiftMask  , xK_q     ), io exitSuccess                                            )
     , ((modm .|. shiftMask  , xK_h     ), spawn "xmonad --recompile; xmonad --restart"              )
     , ((modm .|. shiftMask  , xK_g     ), sendMessage ToggleGaps                                    )

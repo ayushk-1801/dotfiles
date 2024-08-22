@@ -16,7 +16,7 @@ command_timeout = 1000
 style = "blue"
 
 [character]
-success_symbol = "[❯](white)"
+success_symbol = "[❯](bold yellow)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 

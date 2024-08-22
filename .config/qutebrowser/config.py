@@ -11,7 +11,22 @@
 #   qute://help/settings.html
 
 # Change the argument to True to still load settings configured via autoconfig.yml
+from qutebrowser.api import interceptor
+
+
 config.load_autoconfig(False)
+
+def filter_yt(info: interceptor.Request):
+    """Block the given request if necessary."""
+    url = info.request_url
+    if (
+        url.host() == "www.youtube.com"
+        and url.path() == "/get_video_info"
+        and "&adformat=" in url.query()
+    ):
+        info.block()
+
+interceptor.register(filter_yt)
 
 c.fonts.default_family = "JetBrainsMono Nerd Font"
 c.fonts.default_size = "16pt"
