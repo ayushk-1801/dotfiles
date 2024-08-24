@@ -50,6 +50,11 @@ HandlePowerKey=suspend
 HandlePowerKerLongPress=poweroff
 ```
 
+## Fix clock in dual boot
+```
+$ timedatectl set-local-rtc 1 --adjust-system-clock
+```
+
 ## Keyboard Layout
 Location: '/etc/keyd/default.conf'
 ```
