@@ -89,3 +89,4 @@ Install ntfs-3g for ntfs partitions
 
 ## Other
 - Setup sddm, betterlockscreen
+- Pacman : parallel downloading, colors

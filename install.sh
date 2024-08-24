@@ -16,4 +16,6 @@ paru -S picom-ftlabs-git
 paru -S ttf-jetbrains-mono-nerd
 paru -S noto-fonts-emoji
 paru -S spotify
+paru -S stremio
+paru -S betterlockscreen
 paru -S visual-studio-code-bin
