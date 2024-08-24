@@ -9,15 +9,6 @@ git clone https://github.com/ayushk-1801/dotfiles.git
 cd dotfiles
 stow .
 ```
-## Setup dwm
-```
-cd .config/dwm
-sudo make clean install
-cd .config/dmenu
-sudo make clean install
-cd .config/dwmbar
-sudo ./install.sh
-```
 ## Setup Xmonad
 ```
 sudo pacman -S xmonad xmonad-contrib xmobar
