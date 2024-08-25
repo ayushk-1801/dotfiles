@@ -41,7 +41,8 @@ myBorderWidth        = 2
 
 myModMask            = mod4Mask
 
-myWorkspaces         = ["1","2","3","4","5","6","7","8","9"]
+myWorkspaces         = ["Main","CP","Study","Dev","Conf","BG","Sys","Virt","Misc"]
+-- myWorkspaces         = ["1","2","3","4","5","6","7","8","9"]
 myNormalBorderColor  = "#000000"
 myFocusedBorderColor = "#ff0000"
 
@@ -71,7 +72,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask  , xK_Return), withFocused $ windows . W.sink                            )
     , ((modm                , xK_comma ), sendMessage (IncMasterN 1)                                )
     , ((modm                , xK_period), sendMessage (IncMasterN (-1))                             )
-    , ((modm                , xK_b     ), spawn "qutebrowser &" )
+    , ((modm                , xK_b     ), spawn "qutebrowser &"                                     )
     , ((modm .|. shiftMask  , xK_q     ), io exitSuccess                                            )
     , ((modm .|. shiftMask  , xK_h     ), spawn "xmonad --recompile; xmonad --restart"              )
     , ((modm .|. shiftMask  , xK_g     ), sendMessage ToggleGaps                                    )
@@ -122,10 +123,10 @@ mySWNConfig = def{
 }
 
 myLayout =
-         -- showWName' mySWNConfig
+         showWName' mySWNConfig
          -- $  spacingRaw True (Border 0 5 5 5) True (Border 5 5 5 5) True
          -- $  gaps [(U,30),(R,7),(L,7),(D,7)]
-         avoidStruts myDefaultLayout
+         $ avoidStruts myDefaultLayout
          where
             myDefaultLayout = tiled
                           ||| Mirror tiled

@@ -10,6 +10,7 @@ if status is-interactive
     alias lg="lazygit"
     alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
     alias artix='qemu-system-x86_64 -boot d -cdrom artix-base-runit-20230814-x86_64.iso -m 3G -smp 4 -drive file=artix_disk.img,format=qcow2 -bios /usr/share/ovmf/x64/OVMF_CODE.fd -netdev user,id=net0,hostfwd=tcp::1024-:22 -device e1000,netdev=net0 -enable-kvm'
+    alias kali='qemu-system-x86_64 -boot d -cdrom ~/Downloads/kali-linux-2024.2-installer-amd64.iso -m 3G -smp 4 -drive file=kali_disk.img,format=qcow2 -bios /usr/share/ovmf/x64/OVMF_CODE.fd -netdev user,id=net0,hostfwd=tcp::1024-:22 -device e1000,netdev=net0 -enable-kvm'
 end
 
 if status is-interactive

@@ -13,7 +13,7 @@ Config { font = "JetBrainsMono Nerd Font, Bold, 16"
         , Run Com "/bin/sh" ["-c","~/scripts/spotify.sh"] "music" 10
         , Run UnsafeStdinReader
         -- , Run Date "%a %d-%m-%Y <fc=#8be9fd>%H:%M</fc> " "date" 10
-        , Run Date "%b %_d ~ %I:%M" "date" 10
+        , Run Date "%b %_d ~ %I:%M %p" "date" 10
         ]
         , sepChar = "%"
         , alignSep = "}{"
