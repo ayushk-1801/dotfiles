@@ -12,6 +12,7 @@
 
 # Change the argument to True to still load settings configured via autoconfig.yml
 from qutebrowser.api import interceptor
+from themes import catppuccin
 
 
 config.load_autoconfig(False)
@@ -34,6 +35,7 @@ c.fonts.default_size = "16pt"
 c.zoom.default = "150%"
 
 c.url.default_page = "https://www.google.com/"
+c.url.start_pages = 'https://www.google.com'
 c.url.searchengines = {
     'DEFAULT': 'https://www.google.com/search?q={}',
     'g': 'https://www.google.com/search?q={}',
@@ -65,4 +67,5 @@ c.content.blocking.adblock.lists = [
 
 c.scrolling.smooth = True
 
-config.source('themes/qute-city-lights/city-lights-theme.py')
+# config.source('themes/qute-city-lights/city-lights-theme.py')
+catppuccin.setup(c, 'mocha', True)
