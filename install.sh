@@ -19,3 +19,4 @@ paru -S spotify
 paru -S stremio
 paru -S betterlockscreen
 paru -S visual-studio-code-bin
+paru -S python-adblock
