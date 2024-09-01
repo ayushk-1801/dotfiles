@@ -72,7 +72,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask  , xK_Return), withFocused $ windows . W.sink                            )
     , ((modm                , xK_comma ), sendMessage (IncMasterN 1)                                )
     , ((modm                , xK_period), sendMessage (IncMasterN (-1))                             )
-    , ((modm                , xK_b     ), spawn "firefox-developer-edition &"                       )
+    , ((modm                , xK_b     ), spawn "brave &"                                           )
     , ((modm .|. shiftMask  , xK_q     ), io exitSuccess                                            )
     , ((modm .|. shiftMask  , xK_h     ), spawn "xmonad --recompile; xmonad --restart"              )
     , ((modm .|. shiftMask  , xK_g     ), sendMessage ToggleGaps                                    )
