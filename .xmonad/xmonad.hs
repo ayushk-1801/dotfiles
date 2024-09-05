@@ -41,8 +41,8 @@ myBorderWidth        = 2
 
 myModMask            = mod4Mask
 
-myWorkspaces         = ["Main","CP","Study","Dev","Conf","BG","Sys","Virt","Misc"]
--- myWorkspaces         = ["1","2","3","4","5","6","7","8","9"]
+-- myWorkspaces         = ["Main","CP","Study","Dev","Conf","BG","Sys","Virt","Misc"]
+myWorkspaces         = ["1","2","3","4","5","6","7","8","9"]
 myNormalBorderColor  = "#000000"
 myFocusedBorderColor = "#ff0000"
 
@@ -123,10 +123,10 @@ mySWNConfig = def{
 }
 
 myLayout =
-         showWName' mySWNConfig
+         -- showWName' mySWNConfig
          -- $  spacingRaw True (Border 0 5 5 5) True (Border 5 5 5 5) True
          -- $  gaps [(U,30),(R,7),(L,7),(D,7)]
-         $ avoidStruts myDefaultLayout
+         avoidStruts myDefaultLayout
          where
             myDefaultLayout = tiled
                           ||| Mirror tiled
@@ -148,7 +148,7 @@ myEventHook = swallowEventHook (className =? "Alacritty") (return True)
 myStartupHook = do
     spawnOnce "xrandr --dpi 120 &"
     spawnOnce "nitrogen --restore &"
-    spawnOnce "picom &"
+    -- spawnOnce "picom &"
     spawnOnce "xsetroot -cursor_name left_ptr"
     spawn "xset s off -dpms"
 
