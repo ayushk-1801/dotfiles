@@ -4,7 +4,7 @@ sudo pacman --noconfirm -Syu
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> INSTALLING XORG <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
 sudo pacman --noconfirm -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot xorg-xrdb xorg-xinput
-sudo pacman --noconfirm -S xmonad xmonad-contrib xmobar
+sudo pacman --noconfirm -S xmonad xmonad-contrib xmonad-extras xmobar
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> INSTALLING NVIDIA DRIVERS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
 sudo pacman --noconfirm -S nvidia nvidia-settings nvidia-utils
