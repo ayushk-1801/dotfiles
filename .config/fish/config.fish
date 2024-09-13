@@ -12,10 +12,10 @@ if status is-interactive
     alias kali='qemu-system-x86_64 -boot d -cdrom ~/Downloads/kali-linux-2024.2-installer-amd64.iso -m 4G -smp 4 -drive file=kali_disk.img,format=qcow2 -bios /usr/share/ovmf/x64/OVMF_CODE.fd -netdev user,id=net0,hostfwd=tcp::1024-:22 -device e1000,netdev=net0 -enable-kvm'
 end
 
-if status is-interactive
-and not set -q TMUX
-    exec tmux
-end
+#if status is-interactive
+#and not set -q TMUX
+#    exec tmux
+#end
 
 function mkcd
     command mkdir $argv; and cd $argv
@@ -26,3 +26,4 @@ fzf --fish | source
 zoxide init --cmd cd fish | source
 
 set PATH $PATH /home/ayush/.local/bin
+set -gx PATH /home/ayush/.deno/bin/ $PATH

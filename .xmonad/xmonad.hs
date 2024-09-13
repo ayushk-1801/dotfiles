@@ -53,7 +53,8 @@ toggleFullscreen = do
     sendMessage ToggleGaps
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
-    [ ((modm                , xK_t     ), spawn $ XMonad.terminal conf                              )
+    -- [ ((modm                , xK_t     ), spawn $ XMonad.terminal conf                              )
+    [ ((modm                , xK_t     ), spawn "kitty fish -c 'tmux'"                              )
     , ((modm                , xK_p     ), spawn ".config/rofi/launchers/type-1/launcher.sh"         )
     , ((modm .|. shiftMask  , xK_p     ), spawn "scripts/rofi-pdf"                                  )
     , ((modm                , xK_q     ), kill                                                      )
