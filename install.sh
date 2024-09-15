@@ -1,22 +1,34 @@
 #!/bin/bash
-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> UPDATING SYSTEM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+
 sudo pacman --noconfirm -Syu
 
-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> INSTALLING XORG <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
-sudo pacman --noconfirm -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot xorg-xrdb xorg-xinput
-sudo pacman --noconfirm -S xmonad xmonad-contrib xmonad-extras xmobar
+if ! command -v yay &> /dev/null; then
+    sudo pacman --noconfirm -S base-devel git
+    cd
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf yay
+fi
 
-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> INSTALLING NVIDIA DRIVERS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+sudo pacman --noconfirm -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot xorg-xrdb xorg-xinput xmonad xmonad-contrib xmonad-extras xmobar
+
 sudo pacman --noconfirm -S nvidia nvidia-settings nvidia-utils
 
-echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> INSTALLING IMPORTANT PROGRAMS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
-sudo pacman --noconfirm -S git vim tmux fish neovim kitty neofetch bashtop exa bat fd fzf lxappearance nitrogen dunst firefox firefox-developer-edition discord xcolor thunar gvfs rofi ly keyd paru starship xclip tldr
+sudo pacman --noconfirm -S git vim tmux fish neovim kitty neofetch bashtop exa bat fd fzf lxappearance nitrogen dunst discord xcolor thunar gvfs rofi ly keyd paru starship xclip tldr
 
-paru -S picom-ftlabs-git
-paru -S ttf-jetbrains-mono-nerd
-paru -S noto-fonts-emoji
-paru -S spotify
-paru -S stremio
-paru -S betterlockscreen
-paru -S visual-studio-code-bin
-paru -S python-adblock
+yay --noconfirm -S picom-ftlabs-git ttf-jetbrains-mono-nerd noto-fonts-emoji spotify stremio betterlockscreen visual-studio-code-bin
+
+if [ -d ~/dotfiles ]; then
+    cd ~/dotfiles || exit
+    stow .
+else
+    echo "Dotfiles directory not found!"
+fi
+
+if command -v xmonad &> /dev/null; then
+    xmonad --recompile
+else
+    echo "XMonad not found!"
+fi
