@@ -1,17 +1,5 @@
 # Post Installation Instructions
 
-## DWM
-Location: '/usr/share/xsessions/dwm.desktop'
-```
-[Desktop Entry]
-Encoding=UTF-8
-Name=dwm
-Comment=Dynamic Window Manager
-Exec=/usr/local/bin/dwm
-Icon=dwm
-Type=XSession
-```
-
 ## Touchpad Gestures
 Location: '/etc/X11/xorg.conf.d/30-touchpad.conf'
 ```
@@ -65,16 +53,3 @@ b = C-left
 u = home
 i = end
 ```
-
-## Mount Partitions
-Location: '/etc/fstab' \
-Install ntfs-3g for ntfs partitions
-
-```
-# <file system>         <mount point>   <type>      <options>               <dump>  <pass>
-/dev/nvme0n1p4      	/mnt/home    	ntfs-3g	    defaults                0       2
-```
-
-## Other
-- Setup sddm, betterlockscreen
-- Pacman : parallel downloading, colors
