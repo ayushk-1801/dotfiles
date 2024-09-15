@@ -1,20 +1,3 @@
-# Set-up dotfiles
-## Dependencies
-```
-sudo pacman -S stow
-```
-## Clone & Stow
-```
-git clone https://github.com/ayushk-1801/dotfiles.git
-cd dotfiles
-stow .
-```
-## Setup Xmonad
-```
-sudo pacman -S xmonad xmonad-contrib xmobar
-xmonad --recompile
-```
-
 # Post Installation Instructions
 
 ## DWM
