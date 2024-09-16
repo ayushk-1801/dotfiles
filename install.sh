@@ -18,7 +18,7 @@ sudo pacman --noconfirm -S nvidia nvidia-settings nvidia-utils
 
 sudo pacman --noconfirm -S git vim tmux fish neovim kitty neofetch bashtop exa bat fd fzf lxappearance nitrogen dunst discord xcolor thunar gvfs rofi keyd paru starship xclip tldr physlock
 
-yay --noconfirm -S picom-ftlabs-git ttf-jetbrains-mono-nerd noto-fonts-emoji spotify stremio visual-studio-code-bin
+yay --noconfirm -S picom-ftlabs-git ttf-jetbrains-mono-nerd noto-fonts-emoji spotify stremio visual-studio-code-bin zen-browser-avx2-bin
 
 if [ -d ~/dotfiles ]; then
     cd ~/dotfiles || exit
