@@ -1,5 +1,5 @@
-TODO_FILE="$HOME/todos"
+TODO_FILE="$HOME/Ayush/todos.md"
 
-TODO_COUNT=$(wc -l < "$TODO_FILE")
+TODO_COUNT=$(grep -c '^- \[ \]' "$TODO_FILE")
 
 echo "$TODO_COUNT"
