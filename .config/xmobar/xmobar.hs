@@ -10,9 +10,9 @@ Config { font = "JetBrainsMono Nerd Font, Bold, 16"
         , Run Battery [ "--template", "<acstatus>", "--Low"     , "15", "--", "--off"     , "<left>%"] 100
         , Run Volume "default" "Master" ["-t", "<volume>%"] 10
         , Run DiskU [("/", "<used>/<size>"), ("nvme0n1p6", "<used>/<size>")] [ "-L", "20", "-H", "50", "-m", "1", "-p", "3", "-S", "GB", "-d", "1"] 20
-        , Run Com "/bin/sh" ["-c","~/scripts/spotify.sh"] "music" 10
-        , Run Com "/bin/sh" ["-c","~/scripts/todos.sh"] "todos" 500
-        , Run Com "/bin/sh" ["-c","~/scripts/temperature.sh"] "temp" 100
+        , Run Com "/bin/sh" ["-c","~/.local/bin/scripts/spotify.sh"] "music" 10
+        , Run Com "/bin/sh" ["-c","~/.local/bin/scripts/todos.sh"] "todos" 500
+        , Run Com "/bin/sh" ["-c","~/.local/bin/scripts/temperature.sh"] "temp" 100
         , Run UnsafeStdinReader
         -- , Run Date "%a %d-%m-%Y <fc=#8be9fd>%H:%M</fc> " "date" 10
         , Run Date "%b %_d ~ %I:%M %p" "date" 10
