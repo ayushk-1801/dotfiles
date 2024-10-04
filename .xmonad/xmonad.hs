@@ -32,7 +32,7 @@ import qualified Data.Map           as M
 import qualified Data.Maybe         as DM
 
 
-myTerminal           = "kitty"
+myTerminal           = "wezterm"
 
 myFocusFollowsMouse  :: Bool
 myFocusFollowsMouse  = True
@@ -53,10 +53,10 @@ toggleFullscreen = do
     sendMessage ToggleGaps
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
-    -- [ ((modm                , xK_t     ), spawn $ XMonad.terminal conf                              )
-    [ ((modm                , xK_t     ), spawn "kitty fish -c 'tmux'"                              )
+    [ ((modm                , xK_t     ), spawn $ XMonad.terminal conf                              )
+    -- [ ((modm                , xK_t     ), spawn "wezterm start -- fish -c 'tmux'"                              )
     , ((modm                , xK_p     ), spawn ".config/rofi/launchers/type-1/launcher.sh"         )
-    , ((modm .|. shiftMask  , xK_p     ), spawn ".local/bin/scripts/rofi-pdf"                                  )
+    , ((modm .|. shiftMask  , xK_p     ), spawn ".local/bin/scripts/rofi-pdf"                       )
     , ((modm                , xK_q     ), kill                                                      )
     , ((modm                , xK_space ), sendMessage NextLayout                                    )
     , ((modm .|. controlMask, xK_t     ), toggleFullscreen                                          )
@@ -73,7 +73,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask  , xK_Return), withFocused $ windows . W.sink                            )
     , ((modm                , xK_comma ), sendMessage (IncMasterN 1)                                )
     , ((modm                , xK_period), sendMessage (IncMasterN (-1))                             )
-    , ((modm                , xK_b     ), spawn "zen-browser -P \"Default (alpha)\" &"              )
+    , ((modm                , xK_b     ), spawn "zen-browser -P \"Personal\" &"              )
     , ((modm .|. shiftMask  , xK_b     ), spawn "zen-browser -P \"IIITD\" &"                        )
     , ((modm .|. shiftMask  , xK_q     ), io exitSuccess                                            )
     , ((modm .|. shiftMask  , xK_h     ), spawn "xmonad --recompile; xmonad --restart"              )

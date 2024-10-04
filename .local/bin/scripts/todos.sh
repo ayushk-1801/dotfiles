@@ -1,4 +1,4 @@
-TODO_FILE="$HOME/Ayush/todos.md"
+TODO_FILE="$HOME/Ayush/Vault/Todos.md"
 
 TODO_COUNT=$(grep -c '^- ' "$TODO_FILE")
 
