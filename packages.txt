@@ -1,3 +1,4 @@
+acpi
 amd-ucode
 arandr
 aria2
@@ -55,7 +56,6 @@ noto-fonts-emoji
 nvidia
 nvidia-settings
 nvidia-utils
-obsidian
 openfortivpn
 p7zip
 perl-image-exiftool
@@ -97,10 +97,6 @@ wezterm
 xclip
 xcolor
 xfce4-power-manager
-xmobar
-xmonad
-xmonad-contrib
-xmonad-extras
 xorg-server
 xorg-xinit
 xorg-xinput
