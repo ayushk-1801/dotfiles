@@ -1,2 +1,2 @@
 #!/bin/sh
-exec xmonad
+exec dwm

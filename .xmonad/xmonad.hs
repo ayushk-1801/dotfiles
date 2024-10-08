@@ -154,7 +154,7 @@ myEventHook = swallowEventHook (className =? "Alacritty") (return True)
 myStartupHook = do
     spawnOnce "xrandr --dpi 120 &"
     spawnOnce "nitrogen --restore &"
-    spawnOnce "picom &"
+    -- spawnOnce "picom &"
     spawnOnce "xsetroot -cursor_name left_ptr"
     spawn "xset s off -dpms"
 
