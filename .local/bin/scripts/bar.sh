@@ -7,7 +7,7 @@ battery() {
 
 volume() {
     cmd="$(pactl get-sink-volume 0 | cut -d/ -f2 | sed -n 1p | awk '{print $1}' | cut -d% -f1)"
-    echo -ne "VOLUME $cmd%"
+    echo -ne "VOL $cmd%"
 }
 
 _mem() {
@@ -31,7 +31,7 @@ disk() {
 }
 
 date_time() {
-    date_time=$(date +"%Y-%m-%d %H:%M")
+    date_time=$(date +"%d-%m-%Y %H:%M")
     echo -ne "$date_time"
 }
 
