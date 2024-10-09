@@ -64,6 +64,7 @@ static const char *volupcmd[] = {"pactl", "set-sink-volume", "0", "+5%", NULL};
 static const char *voldowncmd[] = {"pactl", "set-sink-volume", "0", "-5%", NULL};
 static const char *brupcmd[] = {"brightnessctl", "set", "+10%", NULL};
 static const char *brdowncmd[] = {"brightnessctl", "set", "10%-", NULL};
+static const char *dmenupdf[] = { "dmenu-pdf", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -100,11 +101,15 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+    { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenupdf } },
     { 0, XF86XK_AudioMute, spawn, {.v = mutecmd} },
     { 0, XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd} },
     { 0, XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd} },
     { 0, XF86XK_MonBrightnessUp, spawn, {.v = brupcmd} },
     { 0, XF86XK_MonBrightnessDown, spawn, {.v = brdowncmd} },
+    { 0, XF86XK_AudioPlay, spawn, SHCMD("playerctl play-pause") },
+    { 0, XF86XK_AudioNext, spawn, SHCMD("playerctl next") },
+    { 0, XF86XK_AudioPrev, spawn, SHCMD("playerctl previous") },
     { 0, XK_Print, spawn, SHCMD("flameshot gui") },
     { MODKEY,                       XK_Print,   spawn,         SHCMD("flameshot screen -p ~/Screenshots") },
     { MODKEY|ShiftMask,             XK_Print,   spawn,         SHCMD("flameshot full -p ~/Screenshots") },
