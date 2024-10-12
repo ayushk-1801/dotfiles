@@ -1,34 +1,63 @@
 #!/bin/bash
 
-sudo pacman --noconfirm -Syu
-
-if ! command -v yay &> /dev/null; then
-    sudo pacman --noconfirm -S base-devel git
-    cd
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si --noconfirm
-    cd ..
-    rm -rf yay
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <EFI_PARTITION> <ROOT_PARTITION> <SWAP_PARTITION>"
+    exit 1
 fi
 
-sudo pacman --noconfirm -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot xorg-xrdb xorg-xinput xmonad xmonad-contrib xmonad-extras xmobar
+EFI_PARTITION="$1"
+ROOT_PARTITION="$2"
+SWAP_PARTITION="$3"
 
-sudo pacman --noconfirm -S nvidia nvidia-settings nvidia-utils
+mkfs.fat -F32 "$EFI_PARTITION"
+mkfs.ext4 "$ROOT_PARTITION"
+mkswap "$SWAP_PARTITION"
 
-sudo pacman --noconfirm -S git vim tmux fish neovim kitty neofetch bashtop exa bat fd fzf lxappearance nitrogen dunst discord xcolor thunar gvfs rofi keyd paru starship xclip tldr physlock xfce4-power-manager
+mount "$ROOT_PARTITION" /mnt
+mkdir /mnt/boot
+mount "$EFI_PARTITION" /mnt/boot
+swapon "$SWAP_PARTITION"
 
-yay --noconfirm -S picom-ftlabs-git ttf-jetbrains-mono-nerd noto-fonts-emoji spotify stremio visual-studio-code-bin zen-browser-avx2-bin
+pacstrap -i /mnt base base-devel linux linux-headers linux-firmware amd-ucode sudo git vim neofetch bashtop cmake make bluez bluez-utils networkmanager cargo gcc mpv
 
-if [ -d ~/dotfiles ]; then
-    cd ~/dotfiles || exit
-    stow .
-else
-    echo "Dotfiles directory not found!"
-fi
+genfstab -U /mnt >> /mnt/etc/fstab
 
-if command -v xmonad &> /dev/null; then
-    xmonad --recompile
-else
-    echo "XMonad not found!"
-fi
+arch-chroot /mnt /bin/bash <<EOF
+passwd
+
+    useradd -m -g users -G wheel,storage,video,audio -s /bin/bash ayush
+    passwd ayush
+
+    sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
+
+    ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+    hwclock --systohc
+
+    sed -i 's/^#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
+    locale-gen
+    echo "LANG=en_US.UTF-8" > /etc/locale.conf
+
+    echo "archlinux" > /etc/hostname
+    cat <<EOT >> /etc/hosts
+    127.0.0.1     localhost
+    ::1           localhost
+    127.0.1.1     archlinux.localdomain   archlinux
+    EOT
+
+    pacman -S --noconfirm efibootmgr networkmanager sudo network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools
+
+    bootctl --path=/boot install
+    cat <<EOT > /boot/loader/entries/arch.conf
+    title   Arch Linux
+    linux   /vmlinuz-linux
+    initrd  /initramfs-linux.img
+    options root=$ROOT_PARTITION rw
+    EOT
+
+    sed -i 's/^default.*/default arch-linux/g' /boot/loader/loader.conf
+
+    systemctl enable bluetooth
+    systemctl enable NetworkManager
+EOF
+
+umount -lR /mnt

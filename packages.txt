@@ -6,6 +6,7 @@ auto-cpufreq
 base
 base-devel
 bat
+bc
 blueman
 bluez
 bluez-utils
@@ -20,8 +21,8 @@ duf
 dunst
 edk2-ovmf
 efibootmgr
-emptty
 eza
+fastfetch
 fd
 firefox-developer-edition
 fish
@@ -34,7 +35,6 @@ gvfs
 htop
 jdk-openjdk
 keepassxc
-kitty
 lazygit
 libosinfo
 libreoffice-fresh
@@ -48,7 +48,6 @@ man-db
 mongodb-bin
 mongodb-compass
 mtools
-neofetch
 neovim
 networkmanager
 nitrogen
@@ -75,7 +74,6 @@ qemu-img
 qt5-webview
 qt6-webview
 reflector
-rofi
 slack-desktop
 spotify
 starship
