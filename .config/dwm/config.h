@@ -11,7 +11,7 @@ static const char normal_bg[]       = "#222222";
 static const char normal_bd[]       = "#444444";
 static const char normal_fg[]       = "#bbbbbb";
 static const char selected_fg[]       = "#000000";
-static const char selected_bg[]        = "#d3d1a1";
+static const char selected_bg[]        = "#8bc8b9";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { normal_fg, normal_bg, normal_bd },
@@ -69,7 +69,7 @@ static const char *dmenupdf[] = { "dmenu-pdf", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

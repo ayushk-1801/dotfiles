@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BG="#d3d1a1"
+BG="#8bc8b9"
 FG="#000000"
 RESET="^d^"
 
