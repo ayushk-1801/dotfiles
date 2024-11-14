@@ -71,16 +71,16 @@ elif [[ "$selected_option" == "Docker" ]]; then
 
     if [ -n "$TMUX" ]; then
         if ! tmux has-session -t="$selected_container" 2>/dev/null; then
-            tmux new-session -s "$selected_container" "docker exec -it $selected_container /bin/bash"
+            tmux new-session -s "$selected_container" "docker exec -it $selected_container sh"
         else
             tmux switch-client -t "$selected_container"
         fi
     else
         if ! pgrep -x "tmux" >/dev/null; then
-            tmux new-session -s "$selected_container" "docker exec -it $selected_container /bin/bash"
+            tmux new-session -s "$selected_container" "docker exec -it $selected_container sh"
         else
             if ! tmux has-session -t="$selected_container" 2>/dev/null; then
-                tmux new-session -s "$selected_container" "docker exec -it $selected_container /bin/bash"
+                tmux new-session -s "$selected_container" "docker exec -it $selected_container sh"
             else
                 tmux switch-client -t "$selected_container"
             fi
@@ -88,7 +88,7 @@ elif [[ "$selected_option" == "Docker" ]]; then
     fi
 
     if ! tmux has-session -t=$selected_container 2>/dev/null; then
-        tmux new-session -s "$selected_container" -d "docker exec -it $selected_container /bin/bash"
+        tmux new-session -s "$selected_container" -d "docker exec -it $selected_container sh"
     fi
 
     tmux switch-client -t $selected_container

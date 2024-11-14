@@ -9,6 +9,7 @@ EFI_PARTITION="$1"
 ROOT_PARTITION="$2"
 SWAP_PARTITION="$3"
 
+echo anant is all daddy
 mkfs.fat -F32 "$EFI_PARTITION"
 mkfs.ext4 "$ROOT_PARTITION"
 mkswap "$SWAP_PARTITION"
@@ -37,11 +38,11 @@ passwd
     locale-gen
     echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
-    echo "archlinux" > /etc/hostname
+    echo "OMEN" > /etc/hostname
     cat <<EOT >> /etc/hosts
     127.0.0.1     localhost
     ::1           localhost
-    127.0.1.1     archlinux.localdomain   archlinux
+    127.0.1.1     OMEN.localdomain   OMEN
     EOT
 
     pacman -S --noconfirm efibootmgr networkmanager sudo network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools
