@@ -5,4 +5,4 @@ theme='style-11'
 choice=$(fd -e pdf -e djvu --base-directory ~ | dmenu -fn "JetBrainsMono Nerd Font:style=Bold:size=12" -nb "#222222" -nf "#bbbbbb" -sb "#d3d1a1" -sf "#000000" -i -l 10)
 
 
-[[ -z "$choice" ]] || zen-browser -P "Personal"  ~/"$choice"
+[[ -z "$choice" ]] || zen-browser -P "Ayush"  ~/"$choice"

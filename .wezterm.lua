@@ -14,18 +14,7 @@ config = {
         bottom = 0,
     },
     -- window_background_opacity = 0.5,
-    default_prog = {
-        "/usr/bin/fish",
-        "-l",
-        "-c",
-        [[
-        if command -v tmux > /dev/null
-            tmux attach || tmux new
-        else
-            exec fish
-        end
-        ]],
-    },
+    default_prog = {"/home/ayush/.local/bin/scripts/tmux-startup.sh"},
 }
 
 return config
