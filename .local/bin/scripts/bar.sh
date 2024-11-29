@@ -38,7 +38,7 @@ wifi(){
 
 arch(){
     # cmd="󰣇 ARCHLINUX"
-    cmd="HEISENBERG"
+    cmd="󰣇 HEISENBERG"
     echo -ne "^c$BG^ $cmd$RESET"
 }
 
@@ -52,11 +52,9 @@ _date(){
     echo -ne "^b$BG^^c$FG^ DATE $RESET $cmd"
 }
 
-_mem(){
-    mem_used="$(top -b -n 1 | grep -i mem | sed -n 1p | awk '{print $8}')"
-    mem_total="$(top -b -n 1 | grep -i mem | sed -n 1p | awk '{print $4}')"
-    mem_perc_with_extra="$(echo "scale = 4; ($mem_used/$mem_total)*100" | bc)"
-    final_mem_perc="${mem_perc_with_extra::-2}%"
+_mem() {
+    mem_perc_with_extra=$(free | awk '/^Mem:/ {printf "%.2f\n", $3/$2 * 100}')
+    final_mem_perc="${mem_perc_with_extra::-3}%"  # Removes the decimal places and appends '%'
     echo -ne "^b$BG^^c$FG^ MEM $RESET $final_mem_perc"
 }
 
@@ -67,7 +65,14 @@ _cpu(){
     echo -ne "^b$BG^^c$FG^ CPU $RESET $cmd"
 }
 
+temp(){
+    cpu_temp="$(sensors | grep 'Tctl:' | awk '{print $2}' | tr -d '+' | cut -d. -f1)"
+    gpu_temp="$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)°C"
+    echo -ne "^b$BG^^c$FG^ TEMP $RESET $cpu_temp°C | $gpu_temp"
+}
+
+
 while true; do
-    xsetroot -name "$(arch) $(_cpu) $(_mem) $(volume) $(battery) $(_time) $(_date)"
+    xsetroot -name "$(arch) $(temp) $(_cpu) $(_mem) $(volume) $(battery) $(_time) $(_date)"
     sleep 1
 done

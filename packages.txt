@@ -60,7 +60,6 @@ oxker
 p7zip
 perl-image-exiftool
 physlock
-picom-ftlabs-git
 pipewire
 pipewire-alsa
 pipewire-pulse
@@ -77,7 +76,6 @@ reflector
 ripgrep
 slack-desktop
 spotify
-starship
 stow
 stremio
 sudo

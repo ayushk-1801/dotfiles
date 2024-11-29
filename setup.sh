@@ -13,7 +13,7 @@ if ! command -v yay &> /dev/null; then
 fi
 
 
-yay -S -needed - < ~/dotfiles/packages.txt
+# yay -S -needed - < ~/dotfiles/packages.txt
 
 
 if [ -d ~/dotfiles ]; then
