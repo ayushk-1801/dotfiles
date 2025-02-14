@@ -1,0 +1,6 @@
+[
+  {
+    "label": "Run C++",
+    "command": "g++ -std=c++20 -DLOCAL $ZED_FILENAME -o x && timeout 4s ./x<input.txt>output.txt"
+  }
+]

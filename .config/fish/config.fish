@@ -8,7 +8,6 @@ end
 #    exec tmux
 #end
 
-alias v="nvim"
 alias ls="exa --icons"
 alias ll="exa -lah --icons --color=always --group-directories-first -F"
 alias tree="exa --tree --icons"
@@ -28,10 +27,3 @@ fzf --fish | source
 zoxide init --cmd cd fish | source
 
 set PATH $PATH /home/ayush/.local/bin
-set -gx PATH /home/ayush/.deno/bin/ $PATH
-
-fish_add_path /home/ayush/.local/bin/scripts
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH

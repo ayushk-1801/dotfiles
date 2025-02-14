@@ -11,7 +11,7 @@ static const char normal_bg[]       = "#222222";
 static const char normal_bd[]       = "#444444";
 static const char normal_fg[]       = "#bbbbbb";
 static const char selected_fg[]       = "#000000";
-static const char selected_bg[]        = "#8bc8b9";
+static const char selected_bg[]        = "#ebdbb2";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { normal_fg, normal_bg, normal_bd },
