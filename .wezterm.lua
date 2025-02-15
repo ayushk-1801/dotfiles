@@ -14,7 +14,7 @@ config = {
         bottom = 0,
     },
     -- window_background_opacity = 0.5,
-   -- default_prog = {"/home/ayush/.local/bin/tmux-startup.sh"},
+   default_prog = {"/home/ayush/.local/bin/tmux-startup.sh"},
 }
 
 return config
