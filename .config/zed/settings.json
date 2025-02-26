@@ -1,16 +1,9 @@
 // Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
   "assistant": {
     "default_model": {
-      "provider": "openai",
-      "model": "gpt-4o"
+      "provider": "copilot_chat",
+      "model": "claude-3-5-sonnet"
     },
     "version": "2"
   },
@@ -21,7 +14,7 @@
   "base_keymap": "VSCode",
   "theme": "Github Dark",
   "ui_font_size": 18,
-  "buffer_font_size": 22.0,
+  "buffer_font_size": 21.0,
   // Finder model width
   "file_finder": {
     "modal_width": "medium"
@@ -54,22 +47,6 @@
     "left_padding": 0.15,
     "right_padding": 0.15
   },
-  // Use Copilot Chat AI as default
-
-  // Uncomment below to use local AI with Ollama, refer https://zed.dev/docs/language-model-integration?highlight=ollama#using-ollama-on-macos
-  // "assistant": {
-  //   "default_model": {
-  //     "provider": "ollama",
-  //     "model": "llama3.1:latest"
-  //   },
-  //   "version": "2",
-  //   "provider": null
-  // },
-  "language_models": {
-    "ollama": {
-      "api_url": "http://localhost:11434"
-    }
-  },
   // Inlay hints preconfigured by Zed: Go, Rust, Typescript and Svelte
   "inlay_hints": {
     "enabled": true
@@ -84,6 +61,9 @@
   },
   "languages": {
     // Refer https://zed.dev/docs/languages/javascript and https://zed.dev/docs/languages/typescript for more info
+    "C++": {
+      "show_edit_predictions": false
+    },
     "TypeScript": {
       // Refer https://github.com/jellydn/ts-inlay-hints for how to setup for Neovim and VSCode
       "inlay_hints": {
