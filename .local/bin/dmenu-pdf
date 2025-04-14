@@ -2,6 +2,7 @@
 dir="$HOME/.config/rofi/launchers/type-1"
 theme='style-11'
 
-choice=$(fd -e pdf -e djvu --base-directory ~ --base-directory /mnt | dmenu -fn "JetBrainsMono Nerd Font:style=Bold:size=12" -nb "#222222" -nf "#bbbbbb" -sb "#d3d1a1" -sf "#000000" -i -l 10)
+choice=$(fd -e pdf -e djvu --base-directory /mnt | dmenu -fn "JetBrainsMono Nerd Font:style=Bold:size=12" -nb "#222222" -nf "#bbbbbb" -sb "#d3d1a1" -sf "#000000" -i -l 10)
 
-[[ -z "$choice" ]] || zen-browser -P "Default (alpha)" ~/"$choice" || zen-browser -P "Default (alpha)" "/mnt/$choice"
+# [[ -z "$choice" ]] || zen-browser -P "Default (release)" ~/"$choice" || zen-browser -P "Default (release)" "/mnt/$choice"
+[[ -z "$choice" ]] || zen-browser -P "Default (release)" "/mnt/$choice"
